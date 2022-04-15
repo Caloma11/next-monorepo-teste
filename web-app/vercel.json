@@ -1,3 +1,8 @@
 {
-    "trailingSlash": false
+    "rewrites": [
+        { 
+          "source": "/login/:match*", 
+          "destination": "https://login-app-steel.vercel.app/login/:match*"
+        }
+    ]
 }
