@@ -6,7 +6,7 @@ const nextConfig = {
     return [
       {
         source: '/login/:path*',
-        destination: `https://login-app-steel.vercel.app/login/:path*`,
+        destination: `https://login-app-ricardo-fnd.vercel.app/login/:path*`,
       },
     ]
   },
