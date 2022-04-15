@@ -2,11 +2,12 @@
 
 const nextConfig = {
   reactStrictMode: true,
+  trailingSlash: true,
   async rewrites() {
     return [
       {
-        source: '/login/:path*',
-        destination: `https://login-app-ricardo-fnd.vercel.app/login/:path*`,
+        source: '/login/:path*/',
+        destination: `https://login-app-ricardo-fnd.vercel.app/login/:path*/`,
       },
     ]
   },
