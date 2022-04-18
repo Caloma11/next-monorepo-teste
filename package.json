@@ -6,7 +6,9 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "yarn workspace web-app dev & yarn workspace login dev"
+    "dev": "yarn workspace web-app dev & yarn workspace login dev",
+    "build": "yarn workspace web-app build & yarn workspace login build",
+    "start": "yarn workspace web-app start & yarn workspace login start"
   },
   "devDependencies": {
     "next-transpile-modules": "^9.0.0"

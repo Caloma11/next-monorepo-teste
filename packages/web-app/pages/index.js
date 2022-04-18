@@ -15,6 +15,7 @@ export default function Home() {
       WELCOME TO WEB-APP
       <Link href="/login">Login</Link>
       <Button />
+      <Link href="/register">Go to ubbu.io register</Link>
     </div>
   )
 }
