@@ -10,6 +10,7 @@ on:
 jobs:
   install:
       runs-on: ubuntu-latest
+      container: cypress/browsers:node12.18.3-chrome87-ff82
       steps:
         - name: Checkout
           uses: actions/checkout@v2
@@ -17,9 +18,9 @@ jobs:
         - name: Save build folder
           uses: actions/upload-artifact@v2
           with:
-            name: build-folder
+            name: build
             if-no-files-found: error
-            path: build-folder
+            path: build
 
         - name: Cypress install
           uses: cypress-io/github-action@v2
@@ -30,6 +31,7 @@ jobs:
 
   cypress-run:
     runs-on: ubuntu-latest
+    container: cypress/browsers:node12.18.3-chrome87-ff82
     needs: install
     strategy:
       # tells cypress to not stop other running instances if one fails
