@@ -3,6 +3,8 @@ on:
   push:
     branches:    
       - 'master'
+    paths:
+      packages/login/
 
 jobs:
   cypress-run:
@@ -14,7 +16,6 @@ jobs:
       matrix:
         cypress:
           - working_directory: packages/login/
-          - working_directory: packages/web-app/
 
     steps: 
       - name: Checkout
@@ -29,4 +30,4 @@ jobs:
           working-directory: ${{ matrix.cypress.working_directory }}
           build: yarn run build
           start: yarn run start
-          wait-on: 'http://localhost:3000, http://localhost:3001'
+          wait-on: 'http://localhost:3001'
