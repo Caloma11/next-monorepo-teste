@@ -8,9 +8,23 @@
   "scripts": {
     "dev": "yarn workspace web-app dev & yarn workspace login dev",
     "build": "yarn workspace web-app build & yarn workspace login build",
-    "start": "yarn workspace web-app start & yarn workspace login start"
+    "start": "yarn workspace web-app start & yarn workspace login start",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
-    "next-transpile-modules": "^9.0.0"
-  }
+    "@babel/core": "^7.17.9",
+    "@storybook/addon-actions": "^6.4.22",
+    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/addon-interactions": "^6.4.22",
+    "@storybook/addon-links": "^6.4.22",
+    "@storybook/builder-webpack5": "^6.4.22",
+    "@storybook/manager-webpack5": "^6.4.22",
+    "@storybook/react": "^6.4.22",
+    "@storybook/testing-library": "^0.0.9",
+    "babel-loader": "^8.2.4",
+    "next-transpile-modules": "^9.0.0",
+    "storybook-addon-designs": "^6.2.1"
+  },
+  "dependencies": {}
 }
