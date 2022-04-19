@@ -9,25 +9,14 @@ on:
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
-    
-    strategy: 
-      # won't stop all app tests if one fails
-      fail-fast: false
-      matrix:
-        cypress:
-          - working_directory: packages/login/
-
     steps: 
       - name: Checkout
         uses: actions/checkout@v2
-
-      - run: npm install
-      - run: npm ci
-
+  
       - name: Run tests
         uses: cypress-io/github-action@v2
         with:
-          working-directory: ${{ matrix.cypress.working_directory }}
+          working-directory: packages/login
           build: yarn run build
           start: yarn run start
           wait-on: 'http://localhost:3001'
