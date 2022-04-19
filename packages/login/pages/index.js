@@ -7,7 +7,6 @@ export default function Home() {
     <div className={styles.container}>
       <p>LOGIN</p>
       <p>hey</p>
-      <p>um p aqui</p>
     </div>
   )
 }
