@@ -7,7 +7,8 @@
   ],
   "scripts": {
     "dev": "yarn workspace web-app dev & yarn workspace login dev",
-    "build": "yarn workspace web-app build & yarn workspace login build",
+    "test": "yarn workspace web-app cypress & yarn workspace login cypress",
+    "build": "yarn run test & yarn workspace web-app build & yarn workspace login build",
     "start": "yarn workspace web-app start & yarn workspace login start",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
