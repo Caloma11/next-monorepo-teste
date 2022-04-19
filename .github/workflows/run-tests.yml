@@ -10,7 +10,6 @@ on:
 jobs:
   install:
       runs-on: ubuntu-latest
-      container: cypress/browsers:node12.18.3-chrome87-ff82
       steps:
         - name: Sets node version
           uses: actions/setup-node@v3
