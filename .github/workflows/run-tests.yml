@@ -1,29 +1,32 @@
-# name: cypress e2e
-# on:
-#   push:
-#     branches:    
-#       - 'master'
-#     paths:
-#       - 'packages/**'
-#       - '!packages/shared/**'
+name: cypress e2e
+on:
+  push:
+    branches:    
+      - 'deploy-tests'
+    paths:
+      - 'packages/**'
+      - '!packages/shared/**'
 
-# jobs:
-#   cypress-run:
-#     runs-on: ubuntu-latest
-#     strategy:
-#       # tells cypress to not stop other running instances if one fails
-#       fail-fast: false
-#       matrix:
-#         cypress:
-#           - working_directory: packages/login
-#           - working_directory: packages/web-app
-#     steps: 
-#       - name: Checkout
-#         uses: actions/checkout@v2
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    strategy:
+      # tells cypress to not stop other running instances if one fails
+      fail-fast: false
+      matrix:
+        cypress:
+          - working_directory: packages/login
+          - working_directory: packages/web-app
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v2
 
-#       - name: Run tests
-#         uses: cypress-io/github-action@v2
-#         with:
-#           working-directory: ${{ matrix.cypress.working_directory }}
-#           build: yarn run build
-#           start: yarn run start
+      - name: Run tests
+        uses: cypress-io/github-action@v2
+        with:
+          working-directory: ${{ matrix.cypress.working_directory }}
+          build: yarn run build
+          start: yarn run start
+
+  push-to-master:
+    uses: ad-m/github-push-action@master
