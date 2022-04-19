@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       WELCOME TO WEB-APP
-      <Link href="/login">Login</Link>
+      <Link href="/login">Loginn</Link>
       <Button />
       <Link href="/register">Go to ubbu.io register</Link>
     </div>
