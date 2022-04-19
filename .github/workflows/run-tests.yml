@@ -27,4 +27,3 @@ jobs:
           working-directory: ${{ matrix.cypress.working_directory }}
           build: yarn run build
           start: yarn run start
-          parallel: true
