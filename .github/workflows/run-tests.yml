@@ -24,4 +24,3 @@ jobs:
           working-directory: ${{ matrix.cypress.working_directory }}
           build: yarn run build
           start: yarn run start
-          wait-on: 'http://localhost:3000, http://localhost:3001'
