@@ -29,5 +29,8 @@ jobs:
           start: yarn run start
 
   push-to-master:
+    runs-on: ubuntu-latest
     needs: cypress-run
-    uses: ad-m/github-push-action@master
+    steps:
+      - name: Push to master
+        uses: ad-m/github-push-action@master
