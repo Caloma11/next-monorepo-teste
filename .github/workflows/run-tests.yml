@@ -30,4 +30,4 @@ jobs:
     needs: cypress-run
     steps:
       - name: Push to master
-      - run: git push origin master 
+        run: git push origin master 
