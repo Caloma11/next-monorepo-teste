@@ -4,19 +4,24 @@ on:
     branches:    
       - 'master'
     paths:
-      - 'packages/login/**'
+      - 'packages/**'
+      - '!packages/shared/**'
 
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        cypress:
+          - working_directory: packages/login
+          - working_directory: packages/web-app
     steps: 
       - name: Checkout
         uses: actions/checkout@v2
-  
       - name: Run tests
         uses: cypress-io/github-action@v2
         with:
-          working-directory: packages/login
+          working-directory: ${{ matrix.cypress.working_directory }}
           build: yarn run build
           start: yarn run start
-          wait-on: 'http://localhost:3001'
+          wait-on: 'http://localhost:3000, http://localhost:3001'
