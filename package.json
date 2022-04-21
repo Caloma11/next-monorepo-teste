@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "yarn workspace web-app dev & yarn workspace login dev",
     "test": "yarn workspace web-app cypress & yarn workspace login cypress",
-    "build": "yarn run test & yarn workspace web-app build & yarn workspace login build",
+    "build": "yarn workspace web-app build & yarn workspace login build",
     "start": "yarn workspace web-app start & yarn workspace login start",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -22,10 +22,13 @@
     "@storybook/builder-webpack5": "^6.4.22",
     "@storybook/manager-webpack5": "^6.4.22",
     "@storybook/react": "^6.4.22",
-    "@storybook/testing-library": "^0.0.9",
-    "babel-loader": "^8.2.4",
+    "@storybook/testing-library": "^0.0.10",
+    "babel-loader": "^8.2.5",
     "next-transpile-modules": "^9.0.0",
-    "storybook-addon-designs": "^6.2.1"
+    "react-is": "^18.0.0",
+    "typescript": "^4.6.3",
+    "webpack": "^5.72.0",
+    "webpack-dev-middleware": "^5.3.1"
   },
   "dependencies": {}
 }

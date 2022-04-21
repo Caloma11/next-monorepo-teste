@@ -1,5 +1,6 @@
 import React from 'react';
-import { withDesign } from 'storybook-addon-designs';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import { Button } from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -10,11 +11,10 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [withDesign]
-};
+} as ComponentMeta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
@@ -23,12 +23,6 @@ Primary.args = {
   label: 'Button',
 };
 
-Primary.parameters = {
-  design: {
-    type: 'figma',
-    url: 'https://www.figma.com/file/2stLv9IQlVm4lcQWckRnPX/Login-V2-2022?node-id=209%3A7729'
-  }
-}
 export const Secondary = Template.bind({});
 Secondary.args = {
   label: 'Button',
