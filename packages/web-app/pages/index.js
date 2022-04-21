@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import ImageExample from '../components/Hi';
+import styled from 'styled-components'
 import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css'
 import { Button } from 'shared'
@@ -18,6 +19,12 @@ export default function Home() {
       <Button />
       <Link href="/register">Go to ubbu.io register</Link>
       <ImageExample />
+      <Label>paragraph</Label>
     </div>
   )
 }
+
+const Label = styled.p`
+  background-color: red;
+  color: white;
+`;

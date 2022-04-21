@@ -15,6 +15,9 @@ const nextConfig = withTM({
       }
     ]
   },
+  compiler: {
+    styledComponents: true,
+  }
 });
 
 module.exports = nextConfig;
