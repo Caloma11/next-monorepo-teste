@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <div className={styles.container}>
-      <p>This is the login app's homepage</p>
+      <p>This is the login apps homepage</p>
       <Link href="/logout">
         <a >Go to logout</a>
       </Link>
