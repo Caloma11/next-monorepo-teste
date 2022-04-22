@@ -5,11 +5,12 @@ const WEBAPP_URL = development ? process.env.WEBAPP_URL : `https://webapp-nww521
 const { UBBU_URL } = process.env
 const withTM = require('next-transpile-modules')(['shared']);
 
-
-console.log(LOGIN_URL)
+console.log(WEBAPP_URL)
+console.log(99999)
 
 const nextConfig = withTM({
   reactStrictMode: true,
+  basePath: '/webapp',
   async rewrites() {
     return [
         {
@@ -20,17 +21,18 @@ const nextConfig = withTM({
           source: '/login/:path*',
           destination: `${LOGIN_URL}/login/:path*`
         },
-        {
-          source: '/webapp',
-          destination: `${WEBAPP_URL}`,
-        },
+        // {
+        //   source: '/',
+        //   destination: `${WEBAPP_URL}`,
+        // },
         {
           source: '/webapp/:path*',
           destination: `${WEBAPP_URL}/:path*`
         },
         {
           source: '/',
-          destination: `${UBBU_URL}`
+          destination: `${UBBU_URL}`,
+          basePath: false
         },
         {
           source: '/:path*',
