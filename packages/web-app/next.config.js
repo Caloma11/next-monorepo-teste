@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const LOGIN_URL = process.env.NODE_ENV === 'development' ? process.env.LOGIN_URL : process.env.NEXT_PUBLIC_VERCEL_URL
+const LOGIN_URL = process.env.NODE_ENV === 'development' ? process.env.LOGIN_URL : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
 const { UBBU_URL } = process.env
 const withTM = require('next-transpile-modules')(['shared']);
 
@@ -13,7 +13,7 @@ const nextConfig = withTM({
       },
       {
         source: '/login',
-        destination: `${LOGIN_URL}/login`,
+        destination: `https://${LOGIN_URL}/login`,
       },
       {
         source: '/login/:path*',
